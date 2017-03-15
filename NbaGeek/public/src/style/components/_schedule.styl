@@ -1,0 +1,44 @@
+.schedule
+  flex-column()
+  align-items initial
+  
+  width 100%
+  padding 1em 0 3em
+  
+  box-shadow 0 1px 0 0 $gray-darker, inset 0 1px 0 0 $gray-darker
+  
+  &__details,
+  &__matchup
+    flex-row()
+  
+  &__details
+    justify-content space-between
+    padding 1em 0
+    
+  &__details-date
+    display block
+    
+    font-size $font-size*0.8
+    letter-spacing .1em
+    
+  &__details-location
+    display block
+    
+    font-size $h5
+    text-decoration underline
+    
+  &__matchup
+    justify-content space-around
+    
+.schedule-tmpl
+  display none
+  
+.matchup
+  &__awayteam,
+  &__hometeam
+    width 45%
+    
+    text-align center
+    
+  &__versus
+    font-size $h3

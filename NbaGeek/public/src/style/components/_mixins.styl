@@ -1,0 +1,118 @@
+flex-row()
+  display flex
+  flex-direction row
+  justify-content space-between
+  align-items center
+  
+flex-column()
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  
+container()
+  position relative
+  box-sizing border-box
+  
+  padding 3em 1.5em 1em 1.5em
+  margin-left  auto
+  margin-right  auto 
+  
+  background $bg
+  box-shadow inset 0 1px 0 0 $gray-darker
+  
+  @media screen and (min-width: 768px)
+    width 80%
+    padding 3em 3em 8em 3em
+  
+  @media screen and (min-width: 1024px)
+    width 35em
+    padding 5em 2.5em 8em 2.5em
+    
+  @media screen and (min-width: 1440px)
+    width 45em
+    padding 5em 2.5em 8em 2.5em
+    
+image()
+  margin 0 0 2em 0
+  
+  @media screen and (min-width: 768px)
+    margin 0 0 4em 0
+    
+  @media screen and (min-width: 1024px)
+    display none
+    
+title()
+  margin 0 0 1em 0
+  text-align center
+  
+  color $black
+  font-weight $bold
+  letter-spacing .075em
+  font-size $h2
+  text-transform uppercase
+  
+  &::after
+    display block
+    content ''
+
+    height 2px
+    width 4em
+    margin 1em auto 0 auto
+    
+    background $gray-darker
+    
+inputs()
+  flex-column()
+    
+  @media screen and (min-width: 768px)
+    flex-row()
+    flex-wrap wrap
+    
+    padding-bottom 2em
+    
+before()
+  content ''
+  display inline-block
+  vertical-align middle
+    
+  width 1px
+  
+  @media screen and (min-width: 1024px)
+    min-height calc(100vh - 14em)
+    
+btn-submit()
+  display block
+    
+  border none
+  outline none
+  padding 1em 4.5em
+    
+  color $white
+  background $btn-color
+  font-size $h4
+  text-transform uppercase
+  
+  &:hover
+    background $btn-color-hover
+  
+btn-next()
+  display none
+  position absolute
+  
+  left 50%
+  bottom 3em
+  
+  width 4em
+  height 4em
+  margin-left -2em
+  
+  border-radius 100%
+  border 4px solid $gray-darker
+  background $gray-lighter
+  
+  @media screen and (min-width: 768px)
+    display block
+  &:hover
+    background $gray-darker
+    box-shadow inset 1px 1px 10px 0 $gray

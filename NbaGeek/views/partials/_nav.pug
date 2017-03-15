@@ -1,0 +1,13 @@
+nav.main-nav
+  ul.nav-list
+    li.nav-list__item: a(href = "/") home
+    li.nav-list__item: a(href = "/about") about
+    li.nav-list__item: a(href = "/profile") profile
+    
+    if currentUser
+      li.nav-list__item: a(href = "/logout") log out
+    else  
+      li.nav-list__item: a(href = "/login") log in
+i.main-nav__icon
+  svg.icon-menu
+    use(xlink:href = "#menu")

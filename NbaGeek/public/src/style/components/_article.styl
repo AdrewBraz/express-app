@@ -1,0 +1,40 @@
+.article
+  flex-column()
+  align-items flex-start
+  
+  box-shadow 0 1px 0 0 $gray-darker
+  
+  &__header
+    padding 1em 0
+  
+  &__header-title
+    font-size $h2
+    text-align left
+    letter-spacing .2em
+    
+  &__header-date
+    font-size $font-size*0.8
+    text-align right
+    display block
+    letter-spacing .1em
+    
+  &__content
+    font-size $h4
+    
+  &__link
+    display block
+    padding 1em 2em
+    margin 1em auto 2em
+    
+    color $white
+    text-decoration none
+    
+    background $gray-darker
+    border-radius 1.7em
+    
+    &:hover
+      background $btn-color
+  
+  
+.article-tmpl
+  display none

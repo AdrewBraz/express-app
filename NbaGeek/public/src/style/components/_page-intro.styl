@@ -1,0 +1,33 @@
+.page-intro
+  display inline-block
+  
+  text-align center
+  margin 0 auto
+  
+  &__title
+    position relative
+    
+    margin 0
+    
+    font-weight $bold
+    color $white
+    font-size $h1
+    text-transform uppercase
+    
+    @media screen and (min-width: 768px)
+      font-size $h1*2
+    
+    &::after
+      content ''
+      display block
+      
+      height 2px
+      width 5em
+      margin   0.25em auto
+      
+      background $gray
+      
+  &__description
+    color $white
+    font-size $h4
+    text-transform uppercase

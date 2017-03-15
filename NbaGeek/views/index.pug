@@ -1,0 +1,116 @@
+extends ./partials/_layout.pug 
+block content
+    include ./partials/_nav.pug   
+    header.page-header(id='header')
+      .page-intro
+       .page-intro__content
+         h1.page-intro__title NbaGeek
+         p.page-intro__description Home for every basketball fan
+       .page-header__action
+          ul.page-header__action-btn-wrap
+            li.page-header__action-btn
+              a.scrolly(href = '#one') begin
+    section.about.main(id='one') 
+      .about__container
+        span.about__image.image.hidden
+          img(class = "img" src = 'build/img/jordan.jpg')
+        .about__content
+          h2.about__section-header About
+          p.about__section-text This app was build for every NBA fan. 
+        a.about__btn.scrolly(href = '#two')
+          i.about__btn-icon  
+            svg.icon-arrow
+              use(xlink:href = "#arrow")
+    section.content.main(id='two') 
+      .content__container
+        span.content__image.image.hidden
+          img(class = "img" src = 'build/img/nba-logos.jpg')
+        .content__content
+          h2.content__section-header Content
+          p.content__section-text  Search news. Learn the history. Get stats.
+          ul.content__icons-list
+            li.content__icons-list-item
+              i.icon-content
+                svg.history
+                  use(xlink:href = '#history')
+            li.content__icons-list-item
+              i.icon-content
+                svg.stats
+                  use(xlink:href = '#bar-chart')
+            li.content__icons-list-item
+              i.icon-content
+                svg.team
+                  use(xlink:href = '#sports')
+            li.content__icons-list-item
+              i.icon-content
+                svg.basketball
+                  use(xlink:href = '#basketball')
+        a.content__btn.scrolly(href = '#three')
+          i.about__btn-icon  
+            svg.icon-arrow
+              use(xlink:href = "#arrow")
+    section.note.main(id='three') 
+      .note__container
+        span.note__image.image.hidden
+          img(class = "img" src = 'build/img/node.jpg')
+        .note__content
+          h2.note__section-header About
+          p.note__section-text text text text text text text text twxt twer twre 
+        a.note__btn.scrolly(href = '#registration')
+            i.about__btn-icon  
+              svg.icon-arrow
+                use(xlink:href = "#arrow")
+    section.registration(id = 'registration')
+      .registration__container
+        .registration__header registration
+        form.registration__form(method="POST", action = "/")
+          div.form__inputs
+            input(type = 'name', name = "name", placeholder = 'Name')
+            input(type = 'email', name = "email", placeholder = 'Email')
+            input(type = 'password', name = "password", placeholder = 'Password')
+            input(type = 'password', name = "confirmPassword", placeholder = 'Confirm  Password')
+          div.form__selects  
+            select(name = "favoriteTeam")
+              optgroup(label = "Atlantic Division" )
+                option(value="Boston Celtics") Boston Celtics
+                option(value="Brooklin Nets") Brooklyn Nets
+                option(value="New York Kniks") New York Knicks
+                option(value="Philadelphia 76Sixers") Philadelphia 76Sixers
+                option(value="Toronto Raptors") Toronto Raptors
+              optgroup(label = "Central Division" )
+                option(value= "Chicago Bulls" ) Chicago Bulls
+                option(value="Cleveland Cavaliers") Cleveland Cavaliers
+                option(value="Detroit Pistons") Detroit Pistons
+                option(value="Indiana Pacers") Indiana Pacers
+                option(value="Milwaukee Bucks") Milwaukee Bucks
+              optgroup(label = "SouthEast Division" )
+                option(value="Atlanta Hawks") Atlanta Hawks
+                option(value="Charlote Hornets") Charlote Hornets
+                option(value="Miami Heat") Miami Heat
+                option(value="Orlando Magic") Orlando Magic
+                option(value="Washington Wizards") Washington Wizards
+              optgroup(label = "NorthWest Division" )
+                option(value="Denver Nuggets") Denver Nuggets
+                option(value="Minnesota Timberwolves") Minnesota Timberwolves
+                option(value="Oklahoma City Thunder") Oklahoma City Thunder
+                option(value="Portland Trail Blazers") Portland Trail Blazers
+                option(value="Utah Jazz") Utah Jazz
+              optgroup(label = "Pacific Division" )
+                option(value="Golden State Warriors") Golden State Warriors
+                option(value="Los Angeles Clippers") Los Angeles Clippers
+                option(value="Los Angeles Lakers") Los Angeles Lakers
+                option(value="Phoenix Suns") Phoenix Suns
+                option(value="Sacramento Kings") Sacramento Kings
+              optgroup(label = "Southwest Division" )
+                option(value="Dallas Mavericks") Dallas Mavericks
+                option(value="Houston Rockets") Houston Rockets
+                option(value="Memphis Grizzlies") Memphis Grizzlies
+                option(value="New Orleans Pelicans") New Orleans Pelicans
+                option(value="San Antonio Spurs") San Antonio Spurs
+          .form__btn-wrap
+            button(class = "form__btn"  type="submit") submit
+              
+    include ./partials/_footer.pug
+      block content
+          
+          

@@ -1,0 +1,64 @@
+.content
+  position relative
+  text-align center
+  
+  &__container
+    container()
+    &::before
+      before()
+  
+  &__image
+    image()
+  
+  &__content
+    display inline-block
+    
+    width 80%
+    
+  &__section-header
+    title()
+  
+  &__btn
+    btn-next()
+    
+  &__btn-icon
+    position absolute
+    
+    top 50%
+    left 50%
+    
+    margin-top -20px
+    margin-left -20px
+    
+  &__icons-list
+    display none
+    position relative
+    
+    list-style none
+    padding 0
+    
+    @media screen and (min-width: 1024px)
+      flex-row()
+      flex-wrap wrap
+    
+    &::after
+      display block
+      position absolute
+      content ''
+      
+      top 50%
+      left 0
+        
+      height: 2px;
+      width: 100%;
+      
+      background $gray-darker
+    
+  &__icons-list-item
+    position relative
+    
+    padding 3em 0
+    width 50%
+    
+    &:nth-child(2n+1)
+      box-shadow inset -1px 0 0 0 $gray-darker, 1px 0 0 0 $gray-darker

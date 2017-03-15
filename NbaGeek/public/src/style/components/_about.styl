@@ -1,0 +1,47 @@
+.about
+  position relative
+  text-align center
+  
+  &__container
+    container()
+    &::before
+      before()
+    
+  &__image
+    image()
+  
+  &__content
+    display inline-block
+    
+    width calc(100% - 10px)
+    
+  &__section-header
+    title()
+    
+  &__btn
+    btn-next()
+    
+  &__btn-icon
+    position absolute
+    
+    top 50%
+    left 50%
+    
+    margin-top -20px
+    margin-left -20px
+    
+    
+.about-inner
+  &__title
+    text-align center
+    
+    font-size $h1*2
+    color $black
+    text-transform uppercase
+    
+  &__text
+    text-align center
+    
+    font-size $h5
+    color $black
+    

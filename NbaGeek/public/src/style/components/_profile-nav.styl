@@ -1,0 +1,43 @@
+.profile-nav
+  display block
+  
+  width 100%
+  margin 0 auto
+  
+  background $bg
+  box-sizing border-box
+  
+  @media screen and (min-width: 768px)
+    width 80%;
+    
+  @media screen and (min-width: 1024px)
+    width 35em;
+    
+  @media screen and (min-width: 1440px)
+    width 45em;
+  
+  &__list 
+    flex-row()
+    
+    width 100%
+    padding 0
+    margin 0
+    list-style none
+    
+    box-shadow 0 1px 10px 0 $gray-darker
+    
+  &__list-item
+    margin 0
+    padding 1em 0
+    width 33%
+    text-align center
+    
+    &:hover
+      background $profile
+      
+    & a
+      cursor pointer
+      color $black
+      text-transform uppercase
+      text-decoration none
+      

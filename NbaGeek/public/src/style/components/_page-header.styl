@@ -1,0 +1,74 @@
+.page-header
+  position relative
+  
+  text-align center
+  
+  &::after
+    content ''
+    display inline-block
+    
+    height 85vh
+    vertical-align middle
+  
+    @media screen and (min-width: 768px)
+      height 90vh
+    
+  &__action
+    display none
+    position absolute
+    
+    box-sizing border-box
+    
+    bottom 0
+    left 50%
+    margin-right auto
+    
+    background $bg
+    
+    @media screen and (min-width: 768px)
+      display block
+      width 80%
+      margin-left -40%
+      padding 3em
+      
+    @media screen and (min-width: 1024px)
+      width 35em
+      margin-left -17.5em
+      padding 2.5em
+      
+    @media screen and (min-width: 1440px)
+      width 45em
+      margin-left -22.5em
+      
+  &__action-btn-wrap
+    list-style none
+    padding-left 0
+    margin 0
+    
+  &__btn-wrap
+    list-style none
+    padding 0
+    margin 0
+    
+  &__action-btn
+    display inline-block
+    vertical-align middle
+    
+    padding 1em 0
+    
+    background $btn-color
+    
+    &:hover
+      background $btn-color-hover
+    
+    & a
+      display inline-block
+    
+      min-width 10em
+      padding 0 1em
+      
+      text-transform uppercase
+      font-size $h4
+      color $white
+      letter-spacing 0.15em
+      text-decoration none
