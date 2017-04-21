@@ -16,6 +16,14 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
+router.get('/success', function(req, res, next) {
+    res.render('success', { title: 'Success' });
+});
+
+router.get('/error', function(req, res, next) {
+    res.render('error', { title: 'Success' });
+});
+
 router.post('/', (req, res, next) => {
     if (req.body.email) {
         let userData = {

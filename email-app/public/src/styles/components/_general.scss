@@ -6,3 +6,39 @@ body {
     font-weight: 400;
     color: #fff;
 }
+
+input[type='email'] {
+    width: 15em;
+    padding: 1em;
+    margin-bottom: 2em;
+    background: transparent;
+    outline: none;
+    border: 2px solid #eee;
+    color: #fff;
+    border-radius: 25px;
+    @media screen and(min-width: 768px) {
+        width: 20em;
+    }
+    &:focus {
+        background: transparent;
+        border: 2px solid transparent;
+        box-shadow: 1px 1px 10px 0 rgba(0, 190, 0, 1), -1px -1px 10px 0 rgba(0, 190, 0, 1);
+    }
+}
+
+input[type='submit'] {
+    width: 15em;
+    padding: 1em;
+    margin-bottom: 2em;
+    background: rgba(180, 0, 0, 1);
+    outline: none;
+    color: #fff;
+    border-radius: 25px;
+    border: none;
+    @media screen and(min-width: 768px) {
+        width: 20em;
+    }
+    &:hover {
+        background: rgba(150, 0, 0, 1);
+    }
+}
