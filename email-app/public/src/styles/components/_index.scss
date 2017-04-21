@@ -2,7 +2,6 @@
     position: relative;
     margin: 0;
     padding: 0;
-    height: 100vh;
     &__nav {
         width: 100%;
         text-align: center;
@@ -16,6 +15,20 @@
     background-size: cover;
     background-position: center, top;
     background-repeat: no-repeat;
+    &__mask {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background: rgba(0, 0, 0, .7);
+    }
+    &__discription {
+        padding: 1em 0;
+        @media screen and(min-width: 768px) {
+            padding: 3em 3em;
+        }
+    }
 }
 
 .nav-list {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const helper = require('sendgrid').mail;
-const config = require('./config')
+const config = require('../config')
 const fs = require('fs');
 
 const tempalte = fs.readFileSync('./email/dist/hero.html', 'utf-8');
