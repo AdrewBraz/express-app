@@ -1,0 +1,46 @@
+form.registration__form(method="POST", action = "/")
+          div.form__inputs
+            input(type = 'name', name = "name", placeholder = 'Name')
+            input(type = 'email', name = "email", placeholder = 'Email')
+            input(type = 'password', name = "password", placeholder = 'Password')
+            input(type = 'password', name = "confirmPassword", placeholder = 'Confirm  Password')
+          div.form__selects  
+            select(name = "favoriteTeam")
+              optgroup(label = "Atlantic Division" )
+                option(value="Boston Celtics") Boston Celtics
+                option(value="Brooklin Nets") Brooklyn Nets
+                option(value="New York Kniks") New York Knicks
+                option(value="Philadelphia 76Sixers") Philadelphia 76Sixers
+                option(value="Toronto Raptors") Toronto Raptors
+              optgroup(label = "Central Division" )
+                option(value= "Chicago Bulls" ) Chicago Bulls
+                option(value="Cleveland Cavaliers") Cleveland Cavaliers
+                option(value="Detroit Pistons") Detroit Pistons
+                option(value="Indiana Pacers") Indiana Pacers
+                option(value="Milwaukee Bucks") Milwaukee Bucks
+              optgroup(label = "SouthEast Division" )
+                option(value="Atlanta Hawks") Atlanta Hawks
+                option(value="Charlote Hornets") Charlote Hornets
+                option(value="Miami Heat") Miami Heat
+                option(value="Orlando Magic") Orlando Magic
+                option(value="Washington Wizards") Washington Wizards
+              optgroup(label = "NorthWest Division" )
+                option(value="Denver Nuggets") Denver Nuggets
+                option(value="Minnesota Timberwolves") Minnesota Timberwolves
+                option(value="Oklahoma City Thunder") Oklahoma City Thunder
+                option(value="Portland Trail Blazers") Portland Trail Blazers
+                option(value="Utah Jazz") Utah Jazz
+              optgroup(label = "Pacific Division" )
+                option(value="Golden State Warriors") Golden State Warriors
+                option(value="Los Angeles Clippers") Los Angeles Clippers
+                option(value="Los Angeles Lakers") Los Angeles Lakers
+                option(value="Phoenix Suns") Phoenix Suns
+                option(value="Sacramento Kings") Sacramento Kings
+              optgroup(label = "Southwest Division" )
+                option(value="Dallas Mavericks") Dallas Mavericks
+                option(value="Houston Rockets") Houston Rockets
+                option(value="Memphis Grizzlies") Memphis Grizzlies
+                option(value="New Orleans Pelicans") New Orleans Pelicans
+                option(value="San Antonio Spurs") San Antonio Spurs
+          .form__btn-wrap
+            button(class = "form__btn"  type="submit") submit
