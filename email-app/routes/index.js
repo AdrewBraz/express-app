@@ -1,14 +1,15 @@
-var express = require('express');
-var router = express.Router();
-var helper = require('sendgrid').mail;
+const express = require('express');
+const router = express.Router();
+const helper = require('sendgrid').mail;
+const config = require('./config')
 const fs = require('fs');
 
 const tempalte = fs.readFileSync('./email/dist/hero.html', 'utf-8');
 
-let from_email = new helper.Email('remdigger333@gmail.com');
+let from_email = new helper.Email('test@gmail.com');
 let subj = 'Here is your email';
 let content = new helper.Content("text/html", tempalte);
-const sg = require('sendgrid')("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");
+const sg = require('sendgrid')(config.get("sengrid"));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
