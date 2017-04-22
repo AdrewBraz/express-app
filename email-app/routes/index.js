@@ -9,7 +9,7 @@ const tempalte = fs.readFileSync('./email/dist/hero.html', 'utf-8');
 let from_email = new helper.Email('test@gmail.com');
 let subj = 'Here is your email';
 let content = new helper.Content("text/html", tempalte);
-const sg = require('sendgrid')(config.get("sengrid"));
+const sg = require('sendgrid')(config.get("sendgrid"));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
