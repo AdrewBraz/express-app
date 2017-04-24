@@ -1,4 +1,4 @@
-# Express-app with authorization
+# Express-app with authorization system
 
 * AJAX
 * JQUERY
@@ -8,3 +8,9 @@
 * SVG
 * Stylus
 * JADE
+
+## Run
+* `git clone https://github.com/AdrewBraz/express-app.git`
+* `cd nbageek`
+* `npm install`
+* `npm start`
