@@ -1,25 +1,22 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var favicon = require('express-favicon');
-var session = require('express-session');
-var http = require('http');
-var path = require('path');
-var config = require('./config');
-var errorhandler = require('errorhandler');
-var logger = require('morgan');
-var log = require('./libs/log')(module);
-var app = express();
-var routes = require('./routes/index');
-var mongoose = require('./libs/mongoose');
-var cors = require('cors');
-var HttpError = require('./error').HttpError;
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const favicon = require('express-favicon');
+const session = require('express-session');
+const http = require('http');
+const path = require('path');
+const config = require('./config');
+const errorhandler = require('errorhandler');
+const logger = require('morgan');
+const log = require('./libs/log')(module);
+const app = express();
+const routes = require('./routes/index');
+const mongoose = require('./libs/mongoose');
+const cors = require('cors');
 
 app.set('port', config.get('port'));
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("App is running on port " + config.get('port'))
-})
+http.createServer(app).listen(app.get('port'), () => console.log(`App is running on port  ${config.get('port')}`));
 
 app.options('*', cors())
 app.use(cors());
@@ -30,7 +27,7 @@ app.use(session({
   saveUnitialized: false
 }));
 
-app.use(function(req, res, next){
+app.use((req, res, next) =>{
   res.locals.currentUser = req.session.userId;
   next();
 });
@@ -56,14 +53,14 @@ app.use('/', routes);
 
 mongoose.connect;
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   var err = new Error('File Not Found');
   err.status = 404;
   next(err);
 });
 
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
