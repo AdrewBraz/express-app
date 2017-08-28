@@ -5,7 +5,8 @@
   "author": "me",
   "private": true,
   "engines": {
-    "node": "8.2.1"
+    "node": "8.2.1",
+    "npm": "5.2.0"
   },
   "scripts": {
     "start": "node ./app"
