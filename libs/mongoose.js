@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../config');
 
-mongoose.connect(config.get('mongoose:uri'));
+mongoose.connect(process.env.DATA);
 
 module.exports = mongoose;

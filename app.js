@@ -1,4 +1,6 @@
 const express = require('express');
+require('dotenv').config({ path: 'variables.env' });
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const favicon = require('express-favicon');
@@ -14,6 +16,7 @@ const routes = require('./routes/index');
 const mongoose = require('./libs/mongoose');
 const cors = require('cors');
 
+console.log(process.env.DATA)
 app.set('port', config.get('port'));
 
 http.createServer(app).listen(app.get('port'), () => console.log(`App is running on port  ${config.get('port')}`));
