@@ -1,34 +1,37 @@
 const mongoose = require('../libs/mongoose');
-// const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
+mongoose.Promise = global.Promise;
+const md5 = require('md5');
+const validator = require('validator');
+const mongodbErrorHandler = require('mongoose-mongodb-errors');
+const passportLocalMongoose = require('passport-local-mongoose');
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    required: true,
-    trim: true
+    required: 'Please supply an email address',
+    lowercase: true,
+    trim: true,
+    validate: [validator.isEmail, 'Invalid email address']
   },
   
   name: {
     type: String,
     unique: true,
-    required: true,
+    required: 'Please supply a name',
     trim: true
   },
                                      
   favoriteTeam: {
     type: String,
+    lowercase: true,
     required: true
-  },
-  
-  password: {
-    type: String,
-    unique: true,
-    required: true,
   }
 });
 
-//authentication
+userSchema.plugin(passportLocalMongoose, { usernameField: 'email'});
+userSchema.plugin(mongodbErrorHandler);
 
 // UserSchema.statics.authenticate = (email, password, callback) => {
 //   User.findOne({email: email})
@@ -62,6 +65,6 @@ const UserSchema = new mongoose.Schema({
 //   })
 // })
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

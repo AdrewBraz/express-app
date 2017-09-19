@@ -1,4 +1,8 @@
-form.registration__form(method="POST", action = "/")
+mixin registerForm()
+  section.registration(id = 'registration')
+      .registration__container
+        .registration__header registration
+        form.registration__form(method="POST", action = "/register")
           div.form__inputs
             input(type = 'name', name = "name", placeholder = 'Name')
             input(type = 'email', name = "email", placeholder = 'Email')
@@ -44,3 +48,4 @@ form.registration__form(method="POST", action = "/")
                 option(value="San Antonio Spurs") San Antonio Spurs
           .form__btn-wrap
             button(class = "form__btn"  type="submit") submit
+    
