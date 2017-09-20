@@ -30,6 +30,8 @@ app.set('views', __dirname + '/views');
 
 app.use(express.static(__dirname + "/public"));
 
+app.use(favicon(__dirname + '/public/nba.ico');
+
 
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({extended: true}));
