@@ -12,13 +12,14 @@ const logger = require('morgan');
 const log = require('./libs/log')(module);
 const app = express();
 const MongoStore = require('connect-mongo')(session);
-const routes = require('./routes/index');
 const mongoose = require('./libs/mongoose');
 const cors = require('cors');
 const expressValidator = require('express-validator');
 const passport = require('passport');
 const flash = require('connect-flash');
+require('./models/user')
 require('./helpers/passport');
+const routes = require('./routes/index');
 const errorHandler = require('./helpers/errorHandler');
 
 app.set('port', config.get('port'));
@@ -53,6 +54,7 @@ app.use(flash())
 
 app.use( (req, res, next) => {
   res.locals.flashes = req.flash();
+  res.locals.user = req.user || null;
   next()
 })
 

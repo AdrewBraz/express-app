@@ -4,7 +4,7 @@ html(lang = 'en')
   body
     block messages
       if locals.flashes
-        .inner
+        .flashes
           .flash-messages
             -const categories = Object.keys(locals.flashes)
             each category in categories

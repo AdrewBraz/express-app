@@ -4,7 +4,7 @@ nav.main-nav
     li.nav-list__item: a(href = "/about") about
     li.nav-list__item: a(href = "/profile") profile
     
-    if currentUser
+    if user
       li.nav-list__item: a(href = "/logout") log out
     else  
       li.nav-list__item: a(href = "/register") register

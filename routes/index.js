@@ -1,72 +1,36 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
-const mid = require('../middleware/middle');
 const userController = require('../controllers/userController')
+const authController = require('../controllers/authController')
+const pathController = require('../controllers/pathController')
 
 //GET Home
-router.get('/', (req, res, next) => {
-  req.flash('info', "flash finally works, hih")
-  return res.render('index', {title: 'Home'});
-});
+router.get('/', pathController.home);
+
+router.get('/about', pathController.about);
+router.get('/login', pathController.login);
 
 router.get('/register', userController.register)
-router.post('/register', userController.validateRegister, userController.registerPost)
+router.post('/register', 
+  userController.validateRegister,
+  userController.registerPost,
+  authController.login
+)
 
 //POST Login
-router.post('/login', function(req, res, next){
-  if(req.body.email && req.body.password){
-    User.authenticate(req.body.email, req.body.password, (error, user) => {
-       if(error || !user){
-         let err = new Error('Wrong email or password.');
-         err.status = 401;
-         return next(err);
-       } else{
-         req.session.userId = user._id;
-         return res.redirect('profile');
-       }
-    }); 
-  } else {
-    let error = new Error('Email and password  are required.');
-    error.status = 401;
-    return next(error);
-  }
-})
 
-//GET Profile
-// router.get('/profile', (req, res, next) => {
-//   User.findById(req.session.userId)
-//       .exec(function(error, user){
-//         if(error){
-//           return next(error);
-//         } else{
-//           return res.render('profile', {title: 'Profile', name: user.name, team: user.favoriteTeam})
-//         }
-//       })
-// }) 
+router.get('/profile', userController.profile)
 
 //GET About
-router.get('/about', (req, res, next) => {
-  return res.render('about', {title: 'About'});
-});
+
 
 //GET Login
-router.get('/login', mid.logOut, (req, res, next) => {
-  return res.render('login', {title: 'Log in'} )
-})
+
+
+router.post('/login', authController.login)
 
 //GET Logout
-router.get('/logout', (req, res, next) => {
-  if(req.session){
-    req.session.destroy(function(err){
-      if(err){
-        return next(err);
-      } else{
-        return res.redirect('/');
-      }
-    })
-  }
-})
+router.get('/logout', authController.logout);
 
 module.exports = router;
 
