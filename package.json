@@ -9,9 +9,10 @@
     "npm": "5.3.0"
   },
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
   },
-  "browserslist": "last 2 versions",  
+  "browserslist": "last 2 versions",
   "dependencies": {
     "body-parser": "^1.18.1",
     "connect-flash": "^0.1.1",
