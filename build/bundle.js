@@ -6988,7 +6988,7 @@ var app = (0, _express2.default)();
 app.use(_express2.default.static('public'));
 
 app.get('/', function (req, res) {
-  var html = '<html>\n    <head>\n      <meta charset="utf-8">\n      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">\n    </head>\n    <body>\n    <div id=\'root\'></div>\n    <script src="bundle.js"></script>\n    </body>\n  </html>\n  ';
+  var html = '<html>\n    <head>\n      <meta charset="utf-8">\n      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">\n      <link rel=\'stylesheet\' href=\'styles.css\' >\n    </head>\n    <body>\n    <div id=\'root\'></div>\n    <script src="bundle.js"></script>\n    </body>\n  </html>\n  ';
 
   res.send(html);
 });
