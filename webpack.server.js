@@ -16,6 +16,13 @@ const path = require('path')
           test: /\.js?$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
+        },
+        {
+          test: /\.svg$/,
+          loader: 'svg-sprite-loader',
+          options: {
+              runtimeCompat: true
+          }
         }
       ]
     }

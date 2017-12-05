@@ -25,7 +25,14 @@ module.exports = {
             use: ['css-loader', 'stylus-loader']
         })
       },
-      { test: /\.(woff2?|svg)$/,
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        options: {
+            runtimeCompat: true
+        }
+      },
+      { test: /\.(woff2)$/,
         loader: 'url-loader?limit=10000'
       },
       { test: /\.(ttf|eot)$/,
