@@ -1,18 +1,19 @@
 import React from 'react';
 import Menu from '../img/menu.svg'
+import { NavLink } from 'react-router-dom'
 
 const nav = () => {
   return(
     <nav className="main-nav">
       <ul className="nav-list">
         <li className="nav-list__item">
-          <a href="">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li className="nav-list__item">
-          <a href="">About</a>
+        <NavLink to="/about">About</NavLink>
         </li>
         <li className="nav-list__item">
-          <a href="">Profile</a>
+          <NavLink to="/profile">Profile</NavLink>
         </li>
         <li className="nav-list__item">
           <a href="">Login</a>

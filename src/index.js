@@ -1,28 +1,12 @@
 import express from 'express'
-import React from 'react';
-import { renderToString } from 'react-dom/server'
-import Home from './client/components/Home'
+import renderer from './helpers/renderer'
 
 const app = express()
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  const html = 
-  `<html>
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel='stylesheet' href='styles.css' >
-    </head>
-    <body>
-    <div id='root'></div>
-    <script src="bundle.js"></script>
-    </body>
-  </html>
-  `
-
-  res.send(html)
+app.get('*', (req, res) => {
+  res.send(renderer(req))
 })
 
 app.listen(3000, () => {
