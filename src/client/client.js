@@ -3,9 +3,13 @@ import ReactDom from 'react-dom';
 import Routes from './Routes';
 import{ BrowserRouter } from 'react-router-dom';
 import style from './style/style.styl';
+import store from './store';
+import { Provider } from 'react-redux';
 
 ReactDom.hydrate(
-  <BrowserRouter>
-    <Routes/>
-  </BrowserRouter>
+  <Provider store={ store }>
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
+  </Provider>
   , document.getElementById('root'))
